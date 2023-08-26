@@ -9,13 +9,14 @@ function authentication() {
 }
 
 console.log(numberOfUsers);
-console.log(numberOfAuthenticatedUsers);
+//console.log(numberOfAuthenticatedUsers);
 
 authentication();
 
+
 // Explain what will be logged in the console for each of the console logs in the block of code above.
 
-
+console.log('Exercise 1: \n The outside console logs will log the numberOfUsers but not the numberOfAuthenticatedUsers and the authentication will not log because numberofauthenticatedusers has been interrupted? I had to comment out the incorrect log of the numberofauthenticatedusers so I could log any future code')
 
 
 
@@ -37,18 +38,29 @@ function calculateTotalSalary() {
 
 // Call the calculateTotalSalary function. Explain below each of the steps that are taken by the functions.
 
+console.log('Exercise 2 equals: ' , calculateTotalSalary() , '\n This is calculated by: \n The salary is calculated by adding the base salary and the bonus \n Base salary is defined in the global variable baseSalary \n The bonus is calculated using the calculateBonus function ');
+
+//The salary is calculated by adding the base salary and the bonus
+//base salary is defined in a global variable baseSalary
+//the bonus is calculated using the calculateBonus function 
+
 
 // What is the output?
 
-
+//55000
 
 
 // How would you change the functions so that instead of a global variable the function takes in an argument for the base salary?
 
 
+function calculateTotalSalary1(arguments) {
+  let baseSalary = arguments;
+  let bonusPercentage = 0.1; // 10% bonus
+  let bonus =  baseSalary * bonusPercentage;
+  return baseSalary + bonus;
+}
 
-
-
+console.log('Changing the variables to make the function work still gets the result of ' , calculateTotalSalary1(50000));
 
 /********************* Exercise 3  **********************/
 
@@ -73,12 +85,13 @@ let user2 = {
 // Create a function that can take in a user variable. Return a string that says, "[NAME] lives in [CITY], [COUNTRY]"
 
 
+function exercise2(argument) {
+return argument.name + ' lives in ' + argument.address.city + ', ' + argument.address.country;
+}
+
+console.log('Exercise 3 results: \n' , exercise2(user1) , '\n' , exercise2(user2)) , '\n \n';
 
 
-
-
-
- 
 /********************* Exercise 4  **********************/
 
 let readingList = [
@@ -96,36 +109,40 @@ let readingList2 = [
   "You Don't Know JS",
 ];
 
-function getNextBookToRead() {
-  let nextBook = readingList[0];
+function getNextBookToRead(arguments) {
+  let nextBook = arguments[0];
 
   return (
     "You should read " +
     nextBook +
     " next. You have " +
-    readingList.length +
+    arguments.length +
     " books left on your list!"
+    
   );
 }
 
 let nextBookInfo1 = getNextBookToRead(readingList);
 let nextBookInfo2 = getNextBookToRead(readingList2);
 
+console.log(nextBookInfo1 , '\n' , nextBookInfo2);
 // Run this code, then get nextBookInfo1 and nextBookInfo2 to log in the console. They are supposed
 // to be separate reading lists, but the function is always looking at what's in the first reading
 // list.
+
 
 // Why? How could you fix this so that the function will work with `readingList` or
 // `readingList2`? Please don't change the names of any current identifiers—that is, `readingList`
 // and `readingList2` should stay named that.
 
+
+
+console.log('Exercise 4: \n' , nextBookInfo1 , '\n' , nextBookInfo2 , '\n Answer: Before my change, it logged the first sentence twice. After I redefined the nextBook to equal = arguments[0] and the readingList to arguments as well so that the argument inputted when calling the getNExtBookToRead could by any list and still bring the relevant results for that variable, it worked properly.');
+
+
 // A hint: the function calls to get nextBooInfo1 and
 // nextBookInfo2 are passing in the values for the reading lists they want to get the next book
 // from.
-
-
-
-
 
 
 /********************* Exercise 5  **********************/
@@ -155,7 +172,7 @@ function showMessage(username) {
   alert(message);
 }
 
-showMessage("Dominique");
+//showMessage("Dominique");
 
 // What would print in the alert message when the following code is executed? Think about it, then run the code to see.
 
