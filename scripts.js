@@ -151,15 +151,16 @@ console.log('Exercise 4: \n' , nextBookInfo1 , '\n' , nextBookInfo2 , '\n Answer
 // Calculates your dog's age in humany years by multiplying the puppy’s age by 7.
 // Returns the result of a string like so: "Your doggie is NN years old in dog years!"
 
+function CalculateDogAge(age) {
+  let years = age * 7;
+  return `Your doggie is ${years} years old in dog years!`;
+}
+
 // Call the function three times with different sets of values.
 
-
-
-
-
+console.log('Exercise 5: \n' , CalculateDogAge(7), '\n' , CalculateDogAge(5) , '\n' , CalculateDogAge(2));
 
 // What type of scope are you using to declare the variables? 
-
 
 
 
@@ -172,10 +173,12 @@ function showMessage(username) {
   alert(message);
 }
 
+//showMessage(username);
 //showMessage("Dominique");
-
 // What would print in the alert message when the following code is executed? Think about it, then run the code to see.
 
+//an alert saying 'Hello Dominique'
 
+// How could we change the code so that we are alerting a message for Katherine? Don't write the string literal "Katherine" a second time (that value already exists if you want to use it again), and don't change the names of any current identifiers (i.e., variables and parameters)—username is  a great name for the value globally and in the function
 
-// How could we change the code so that we are alerting a message for Katherine? Don't write the string literal "Katherine" a second time (that value already exists if you want to use it again), and don't change the names of any current identifiers (i.e., variables and parameters)—username is a great name for the value globally and in the function!
+console.log('Exercise 6: \n The code will pop up an alert saying "Hello Dominique" \n To get the alert to say Katherine, just call the function with "showMessage(username)" without any changes');
