@@ -1,15 +1,15 @@
 /********************* Exercise 1  **********************/
 
-let numberOfUsers = 15;
+let numberOfUsers = 15;//global scope
 
 function authentication() {
-  let numberOfAuthenticatedUsers = 10;
-  console.log(numberOfUsers);
-  console.log(numberOfAuthenticatedUsers);
+  let numberOfAuthenticatedUsers = 10;//local scope
+  console.log(numberOfUsers);// 15. It is defined outside of the function
+  console.log(numberOfAuthenticatedUsers);// 10. defined in the function
 }
 
-console.log(numberOfUsers);
-console.log(numberOfAuthenticatedUsers);
+console.log(numberOfUsers);//15
+console.log(numberOfAuthenticatedUsers);//error. not defined outside of the function
 
 authentication();
 
