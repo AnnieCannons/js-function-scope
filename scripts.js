@@ -15,12 +15,6 @@ authentication();
 
 // Explain what will be logged in the console for each of the console logs in the block of code above.
 
-
-
-
-
-
-
 /********************* Exercise 2  **********************/
 
 let baseSalary = 50000;
@@ -60,11 +54,6 @@ function calculateTotalSalary(base) {
 
 console.log(calculateTotalSalary(50000));
 
-
-
-
-
-
 /********************* Exercise 3  **********************/
 
 let user1 = {
@@ -85,15 +74,16 @@ let user2 = {
   },
 };
 
-// Create a function that can take in a user variable. Return a string that says, "[NAME] lives in [CITY], [COUNTRY]"
+// Create a function that can take in a user variable. 
+//Return a string that says, "[NAME] lives in [CITY], [COUNTRY]"
 
+function users(userName, userCity, userCountry) {
+  let userString = `${userName} lives in ${userCity}, ${userCountry}`;
+  return userString;
+};
 
+console.log(users(user1.name, user1.address.city,user1.address.country));
 
-
-
-
-
- 
 /********************* Exercise 4  **********************/
 
 let readingList = [
