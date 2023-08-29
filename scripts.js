@@ -9,7 +9,7 @@ function authentication() {
 }
 
 console.log(numberOfUsers);//15
-console.log(numberOfAuthenticatedUsers);//error. not defined outside of the function
+//console.log(numberOfAuthenticatedUsers);//error. not defined outside of the function
 
 authentication();
 
@@ -37,13 +37,28 @@ function calculateTotalSalary() {
 
 // Call the calculateTotalSalary function. Explain below each of the steps that are taken by the functions.
 
+calculateTotalSalary();
+//calculateBonus function is multiplying the baseSalary and BonusPercentage to return the product
+//calculateTotalSalary is combining the baseSalary plus the bonus from the previous function.
 
 // What is the output?
+console.log(calculateTotalSalary());
+//55000
 
 
 
+// How would you change the functions so that instead of a global variable, the function takes in an argument for the base salary?
+function calculateBonus(base) {
+  let bonusPercentage = 0.1; // 10% bonus
+  return base * bonusPercentage;
+}
 
-// How would you change the functions so that instead of a global variable the function takes in an argument for the base salary?
+function calculateTotalSalary(base) {
+  let bonus = calculateBonus(50000);
+  return base + bonus;
+}
+
+console.log(calculateTotalSalary(50000));
 
 
 
