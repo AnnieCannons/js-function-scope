@@ -1,25 +1,19 @@
 /********************* Exercise 1  **********************/
 
-let numberOfUsers = 15;
+let numberOfUsers = 15;//global scope
 
 function authentication() {
-  let numberOfAuthenticatedUsers = 10;
-  console.log(numberOfUsers);
-  console.log(numberOfAuthenticatedUsers);
+  let numberOfAuthenticatedUsers = 10;//local scope
+  console.log(numberOfUsers);// 15. It is defined outside of the function
+  console.log(numberOfAuthenticatedUsers);// 10. defined in the function
 }
 
-console.log(numberOfUsers);
-console.log(numberOfAuthenticatedUsers);
+console.log(numberOfUsers);//15
+//console.log(numberOfAuthenticatedUsers);//error. not defined outside of the function
 
 authentication();
 
 // Explain what will be logged in the console for each of the console logs in the block of code above.
-
-
-
-
-
-
 
 /********************* Exercise 2  **********************/
 
@@ -37,18 +31,28 @@ function calculateTotalSalary() {
 
 // Call the calculateTotalSalary function. Explain below each of the steps that are taken by the functions.
 
+calculateTotalSalary();
+//calculateBonus function is multiplying the baseSalary and BonusPercentage to return the product
+//calculateTotalSalary is combining the baseSalary plus the bonus from the previous function.
 
 // What is the output?
+console.log(calculateTotalSalary());
+//55000
 
 
 
+// How would you change the functions so that instead of a global variable, the function takes in an argument for the base salary?
+function calculateBonus(base) {
+  let bonusPercentage = 0.1; // 10% bonus
+  return base * bonusPercentage;
+}
 
-// How would you change the functions so that instead of a global variable the function takes in an argument for the base salary?
+function calculateTotalSalary(base) {
+  let bonus = calculateBonus(50000);
+  return base + bonus;
+}
 
-
-
-
-
+console.log(calculateTotalSalary(50000));
 
 /********************* Exercise 3  **********************/
 
@@ -70,15 +74,16 @@ let user2 = {
   },
 };
 
-// Create a function that can take in a user variable. Return a string that says, "[NAME] lives in [CITY], [COUNTRY]"
+// Create a function that can take in a user variable. 
+//Return a string that says, "[NAME] lives in [CITY], [COUNTRY]"
 
+function users(userName, userCity, userCountry) {
+  let userString = `${userName} lives in ${userCity}, ${userCountry}`;
+  return userString;
+};
 
+console.log(users(user1.name, user1.address.city,user1.address.country));
 
-
-
-
-
- 
 /********************* Exercise 4  **********************/
 
 let readingList = [
