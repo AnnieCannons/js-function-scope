@@ -9,7 +9,7 @@ function authentication() {
 }
 
 console.log(numberOfUsers);
-console.log(numberOfAuthenticatedUsers);
+//console.log(numberOfAuthenticatedUsers);
 
 authentication();
 
@@ -23,29 +23,43 @@ authentication();
 
 /********************* Exercise 2  **********************/
 
-let baseSalary = 50000;
+//let baseSalary = 50000;
+//let totalSalary = calculateTotalSalary();
 
-function calculateBonus() {
-  let bonusPercentage = 0.1; // 10% bonus
-  return baseSalary * bonusPercentage;
-}
+//function calculateBonus() {
+  //let bonusPercentage = 0.1; // 10% bonus
+  //return baseSalary * bonusPercentage;
+//}
 
-function calculateTotalSalary() {
-  let bonus = calculateBonus();
-  return baseSalary + bonus;
-}
+//function calculateTotalSalary() {
+  //let bonus = calculateBonus();
+  //return baseSalary + bonus;
+//}
 
 // Call the calculateTotalSalary function. Explain below each of the steps that are taken by the functions.
-
+//console.log(totalSalary);
 
 // What is the output?
-
+//55000
 
 
 
 // How would you change the functions so that instead of a global variable the function takes in an argument for the base salary?
 
+function calculateBonus(baseSalary) {
+  let bonusPercentage = 0.1; // 10% bonus
+  return baseSalary * bonusPercentage;
+}
 
+function calculateTotalSalary(baseSalary) {
+  let bonus = calculateBonus(baseSalary);
+  return baseSalary + bonus;
+}
+
+let baseSalary = 50000;
+let totalSalary = calculateTotalSalary(baseSalary);
+
+console.log(totalSalary); 
 
 
 
@@ -72,11 +86,16 @@ let user2 = {
 
 // Create a function that can take in a user variable. Return a string that says, "[NAME] lives in [CITY], [COUNTRY]"
 
+function intro(user) {
+  const { name, address } = user;
+  const { city, country } = address;
+
+  return `${name} lives in ${city}, ${country}`;
+}
 
 
-
-
-
+console.log(intro(user1));
+console.log(intro(user2));
 
  
 /********************* Exercise 4  **********************/
@@ -96,7 +115,37 @@ let readingList2 = [
   "You Don't Know JS",
 ];
 
-function getNextBookToRead() {
+// function getNextBookToRead() {
+//   let nextBook = readingList[0];
+
+//   return (
+//     "You should read " +
+//     nextBook +
+//     " next. You have " +
+//     readingList.length +
+//     " books left on your list!"
+//   );
+// }
+
+// let nextBookInfo1 = getNextBookToRead(readingList);
+// let nextBookInfo2 = getNextBookToRead(readingList2);
+
+// Run this code, then get nextBookInfo1 and nextBookInfo2 to log in the console. They are supposed
+// to be separate reading lists, but the function is always looking at what's in the first reading
+// list.
+
+//console.log(getNextBookToRead());
+
+// Why? How could you fix this so that the function will work with `readingList` or 
+// `readingList2`? Please don't change the names of any current identifiers—that is, `readingList`
+// and `readingList2` should stay named that.
+//because it needs to be written as an argument so it works with different lists
+
+// A hint: the function calls to get nextBooInfo1 and
+// nextBookInfo2 are passing in the values for the reading lists they want to get the next book
+// from.
+
+function getNextBookToRead(readingList) {
   let nextBook = readingList[0];
 
   return (
@@ -111,18 +160,8 @@ function getNextBookToRead() {
 let nextBookInfo1 = getNextBookToRead(readingList);
 let nextBookInfo2 = getNextBookToRead(readingList2);
 
-// Run this code, then get nextBookInfo1 and nextBookInfo2 to log in the console. They are supposed
-// to be separate reading lists, but the function is always looking at what's in the first reading
-// list.
-
-// Why? How could you fix this so that the function will work with `readingList` or
-// `readingList2`? Please don't change the names of any current identifiers—that is, `readingList`
-// and `readingList2` should stay named that.
-
-// A hint: the function calls to get nextBooInfo1 and
-// nextBookInfo2 are passing in the values for the reading lists they want to get the next book
-// from.
-
+console.log(nextBookInfo1);
+console.log(nextBookInfo2);
 
 
 
@@ -131,18 +170,29 @@ let nextBookInfo2 = getNextBookToRead(readingList2);
 /********************* Exercise 5  **********************/
 // Declare a function named calculateDogAge that:
 // Takes 1 argument: your dog's age.
-// Calculates your dog's age in humany years by multiplying the puppy’s age by 7.
+// Calculates your dog's age in human years by multiplying the puppy’s age by 7.
 // Returns the result of a string like so: "Your doggie is NN years old in dog years!"
-
+function calculateDogAge(dogAge) {
+  let humanAge = dogAge *7;
+  let result = `Your doggie is ${humanAge} years old in dog years!`;
+  return result;
+}
 // Call the function three times with different sets of values.
 
+let dogAge1 = 4;
+let dogAge2 = 6;
+let dogAge3 = 10;
 
+let result1 = calculateDogAge(dogAge1);
+let result2 = calculateDogAge(dogAge2);
+let result3 = calculateDogAge(dogAge3);
 
-
-
+console.log(result1);
+console.log(result2);
+console.log(result3);
 
 // What type of scope are you using to declare the variables? 
-
+//local scope
 
 
 
@@ -162,3 +212,4 @@ showMessage("Dominique");
 
 
 // How could we change the code so that we are alerting a message for Katherine? Don't write the string literal "Katherine" a second time (that value already exists if you want to use it again), and don't change the names of any current identifiers (i.e., variables and parameters)—username is a great name for the value globally and in the function!
+showMessage(username);
