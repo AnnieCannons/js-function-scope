@@ -143,7 +143,7 @@ let nextBookInfo2 = getNextBookToRead(readingList2);
 
 function calculateDogAge(dogAge) {
   let dogAgeHumany = dogAge * 7;
-  return (`Your doggie is ${dogAgeHumany} years old in dog years`)
+  return (`Your doggie is ${dogAgeHumany} years old in human years`)
 };
 
 console.log(calculateDogAge(4));
@@ -169,7 +169,12 @@ function showMessage(username) {
 showMessage("Dominique");
 
 // What would print in the alert message when the following code is executed? Think about it, then run the code to see.
-
+// "Hello, Dominique"
 
 
 // How could we change the code so that we are alerting a message for Katherine? Don't write the string literal "Katherine" a second time (that value already exists if you want to use it again), and don't change the names of any current identifiers (i.e., variables and parameters)—username is a great name for the value globally and in the function!
+function showMessage() {
+  let message = "Hello, " + username;
+  alert(message);
+}
+console.log(showMessage());
