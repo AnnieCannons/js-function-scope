@@ -141,8 +141,14 @@ let nextBookInfo2 = getNextBookToRead(readingList2);
 
 // Call the function three times with different sets of values.
 
+function calculateDogAge(dogAge) {
+  let dogAgeHumany = dogAge * 7;
+  return (`Your doggie is ${dogAgeHumany} years old in dog years`)
+};
 
-
+console.log(calculateDogAge(4));
+console.log(calculateDogAge(6));
+console.log(calculateDogAge(7));
 
 
 
