@@ -77,8 +77,8 @@ let user2 = {
 // Create a function that can take in a user variable. 
 //Return a string that says, "[NAME] lives in [CITY], [COUNTRY]"
 
-function users(userName, userCity, userCountry) {
-  let userString = `${userName} lives in ${userCity}, ${userCountry}`;
+function users(user) {
+  let userString = `${user.name} lives in ${user.city}, ${user.country}`;
   return userString;
 };
 
