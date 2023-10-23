@@ -62,6 +62,9 @@ let totalSalary = calculateTotalSalary(baseSalary);
 console.log(totalSalary); 
 
 
+// The first function defines the values for the bonus percentage and the return runs the multiplication equation and returns the value of that (which will be the amount of the bonus)
+
+// The second function defines the variable bonus as the return value from the first function. It then multiplies the base salary outside of the functions by the bonus to calculate the total salary.
 
 
 /********************* Exercise 3  **********************/
@@ -97,7 +100,7 @@ function intro(user) {
 console.log(intro(user1));
 console.log(intro(user2));
 
- 
+
 /********************* Exercise 4  **********************/
 
 let readingList = [
@@ -208,7 +211,7 @@ function showMessage(username) {
 showMessage("Dominique");
 
 // What would print in the alert message when the following code is executed? Think about it, then run the code to see.
-
+// "Hello, Dominique"
 
 
 // How could we change the code so that we are alerting a message for Katherine? Don't write the string literal "Katherine" a second time (that value already exists if you want to use it again), and don't change the names of any current identifiers (i.e., variables and parameters)—username is a great name for the value globally and in the function!
