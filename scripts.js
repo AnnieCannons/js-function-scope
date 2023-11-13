@@ -86,7 +86,11 @@ let user2 = {
 
 
 function userLocation(user) {
-  return `\${user.name} lives in \${user.address.city}, \${user.address.country}`;
+  return `\${Johnny.Dianz} lives in \${New York}, \${USA}`;
+}
+
+function userLocation(user) {
+  return `\${Lupita.Davenport} lives in \${London}, \${Uk}`;
 }
 
 console.log(userLocation(user1));
